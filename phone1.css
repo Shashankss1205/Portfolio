@@ -1,4 +1,13 @@
 /* Navbar */
+.navbar{
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    opacity: 0.8;
+}
 .navbar ul{
     flex-wrap: wrap;
     justify-content: center;
@@ -48,4 +57,11 @@
 .box p{
     color: white;
     font-size: .8rem;
+}
+.handle{
+    
+    display: flex;
+    flex-direction: column;
+    /* align-items: center; */
+    justify-content: center;
 }
