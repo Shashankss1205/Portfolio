@@ -6,6 +6,61 @@ html{
     scroll-behavior: smooth;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+.wrapper{
+  display: flex;
+}
+.wrapper .static-txt{
+  color: #fff;
+  font-size: 60px;
+  font-weight: 400;
+}
+.wrapper .dynamic-txts{
+  margin-left: 15px;
+  height: 90px;
+  line-height: 90px;
+  overflow: hidden;
+}
+.dynamic-txts li{
+  list-style: none;
+  color: #FC6D6D;
+  font-size: 60px;
+  font-weight: 500;
+  position: relative;
+  top: 0;
+  animation: slide 12s steps(4) infinite;
+}
+@keyframes slide {
+  100%{
+    top: -360px;
+  }
+}
+.dynamic-txts li span{
+  position: relative;
+  margin: 5px 0;
+  line-height: 90px;
+}
+.dynamic-txts li span::after{
+  content: "";
+  position: absolute;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(32, 31, 31, 1);
+  opacity: 1;
+  border-left: 2px solid #FC6D6D;
+  animation: typing 3s steps(10) infinite;
+}
+@keyframes typing {
+  40%, 60%{
+    left: calc(100% + 30px);
+  }
+  100%{
+    left: 0;
+  }
+}
+
 /* navbar */
 .navbar{
     display: flex;
@@ -67,7 +122,76 @@ html{
     font-family: Georgia, 'Times New Roman', Times, serif;
     text-align: center;
     transform: scale(1,1.3);
+    padding: 2%
 }
+
+
+/* effect */
+
+:root {
+    --bg-color:rgba(32, 31, 31, 1);
+    --typewriterSpeed: 6s;
+    --typewriterCharacters: 24;
+  }
+  
+  #effect{
+    font-size: clamp(1rem, 3vw + 1rem, 4rem);
+    position: relative;
+    font-family: "Source Code Pro", monospace;
+    position: relative;
+    width: max-content;
+  }
+  
+#effect::before,
+#effect::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
+  
+#effect::before {
+    background: var(--bg-color);
+    animation: typewriter var(--typewriterSpeed)
+      steps(var(--typewriterCharacters)) 1s forwards;
+  }
+  
+#effect::after {
+    width: 0.125em;
+    background: black;
+    animation: typewriter var(--typewriterSpeed)
+        steps(var(--typewriterCharacters)) 1s forwards,
+      blink 750ms steps(var(--typewriterCharacters)) infinite;
+  }
+  
+  .subtitle {
+    color: rgb(0, 247, 173);
+    font-size: 2rem;
+    opacity: 0;
+    transform: translateY(3rem);
+    animation: fadeInUp 2s ease calc(var(--typewriterSpeed) + 2s) forwards;
+  }
+  
+  @keyframes typewriter {
+    to {
+      left: 100%;
+    }
+  }
+  
+  @keyframes blink {
+    to {
+      background: transparent;
+    }
+  }
+  
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 
 /* ******************************* Portfolio Section ***************************** */
 #portfolio{
@@ -93,7 +217,7 @@ html{
    flex-direction: column;
    text-align: justify;
    height: 100%;
-   background-color: rgba(0, 0, 0, 0.9);
+   background-color: rgba(32, 31, 31, 1);
 }
 #nameid{
    font-size: 3.25rem;
