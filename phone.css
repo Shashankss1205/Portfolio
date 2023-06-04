@@ -7,6 +7,12 @@
     top: 0;
     opacity: 0.8;
 }
+#portfolio p{
+    /* margin: 3%; */
+    color: rgb(0, 247, 173);
+    font-size: 1rem;
+    padding-left: 7%;
+}
 .columns{
     grid-template-columns: auto;
     justify-content: center;

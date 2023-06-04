@@ -12,7 +12,12 @@
     flex-wrap: wrap;
     justify-content: center;
 }
-
+#portfolio p{
+    /* margin: 3%; */
+    color: rgb(0, 247, 173);
+    font-size: 1rem;
+    padding-left: 7%;
+}
 
 /* Headings */
 .heading{
